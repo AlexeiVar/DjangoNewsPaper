@@ -1,0 +1,50 @@
+{% extends 'flatpages/default.html' %}
+{% load censorship %}
+{% block title %}
+NewsList
+{% endblock title %}
+
+{% block content %}
+   <h1>Все новости</h1>
+   <h3>Всего новостей: {{ page_obj.paginator.count }}</h3>
+   <hr>
+   {% if news_list %}
+       <table>
+           <tr>
+               <td>Заголовок</td>
+               <td>Дата публикации</td>
+               <td>Текст</td>
+           </tr>
+
+           {% for news in news_list %}
+           <tr>
+               <td>{{ news.title | censor }}</td>
+               <td>{{ news.creation_time | date:'d M Y' }}</td>
+               <td>{{ news.text | truncatechars:20 | censor }}</td>
+           </tr>
+           {% endfor %}
+
+       </table>
+   {% else %}
+       <h2>Новостей нет!</h2>
+   {% endif %}
+
+   {% if page_obj.has_previous %}
+       <a href="?page=1">1</a>
+       {% if page_obj.previous_page_number != 1 %}
+           ...
+           <a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+       {% endif %}
+   {% endif %}
+
+   {{ page_obj.number }}
+
+   {% if page_obj.has_next %}
+       <a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+           ...
+           <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+       {% endif %}
+   {% endif %}
+
+{% endblock content %}
