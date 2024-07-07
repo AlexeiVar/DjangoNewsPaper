@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pages/', include('django.contrib.flatpages.urls')),
+    path('', include('news.urls')),  # Для удобства сделал еще что пустой путь это тоже новости
     path('news_list/', include('news.urls')),
-    path('news_list/search', include('news.urls'))
+    path('accounts/', include('allauth.urls')),
 ]
