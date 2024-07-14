@@ -7,11 +7,14 @@ from django.urls import reverse
 
 class Category(models.Model):
     name = models.CharField(max_length=255, unique=True)
+    subscribers = models.ManyToManyField(User, blank=True, related_name='categories')
 
     def __str__(self):
         return self.name
 
 
+# Класс авторов перестал использоваться и вместо него теперь идет User и группа авторов
+# модель осталась в коде в основном для учебных целей
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     rating = models.IntegerField(default=0)
@@ -20,7 +23,7 @@ class Author(models.Model):
         posts_rating = Post.objects.filter(author=self).aggregate(pr=Coalesce(Sum('rating'), 0))['pr']
         comments_rating = Comment.objects.filter(user=self.user).aggregate(cr=Coalesce(Sum('rating'), 0))['cr']
         posts_comments_rating = \
-        Comment.objects.filter(post__author__user=self.user).aggregate(pcr=Coalesce(Sum('rating'), 0))['pcr']
+            Comment.objects.filter(post__author__user=self.user).aggregate(pcr=Coalesce(Sum('rating'), 0))['pcr']
         self.rating = posts_rating + comments_rating + posts_comments_rating
         self.save()
 
@@ -37,7 +40,7 @@ class Post(models.Model):
         (news, 'новость')
     ]
 
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     type = models.CharField(max_length=2, choices=TYPE)
     creation_time = models.DateTimeField(auto_now_add=True)
     category = models.ManyToManyField(Category, through='PostCategory')

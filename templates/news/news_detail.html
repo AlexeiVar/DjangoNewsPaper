@@ -7,7 +7,7 @@ NewsDetail
 
 {% block content %}
 <h1>{{ news_detail.title | censor }}</h1>
-<h2>Написано: {{ news_detail.author.user }}. Дата публикации: {{ news_detail.creation_time | date:'d M Y' }}</h2>
+<h2>Написано: {{ news_detail.author }}. Дата публикации: {{ news_detail.creation_time | date:'d M Y' }}</h2>
 <p style="font-size:1.75em">
     {{ news_detail.text | censor }}
 </p>

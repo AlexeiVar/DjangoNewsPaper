@@ -24,9 +24,17 @@ NewsSearch
 
            {% for news in news_list %}
            <tr>
-               <td>{{ news.title | censor }}</td>
+               <td><a href="{% url 'news_detail' news.id %}">{{ news.title | censor }}</a></td>
                <td>{{ news.creation_time | date:'d M Y' }}</td>
                <td>{{ news.text | truncatechars:20 | censor }}</td>
+               <!--Поскольку сделано, что у поста и новости разные страницы, так будет правильнее-->
+               {% if news.type == "NE" %}
+               <td><a href="{% url 'news_delete' news.id %}">Удалить</a></td>
+               <td><a href="{% url 'news_edit' news.id %}">Редактировать</a></td>
+               {% else %}
+               <td><a href="{% url 'post_delete' news.id %}">Удалить</a></td>
+               <td><a href="{% url 'post_edit' news.id %}">Редактировать</a></td>
+               {% endif %}
            </tr>
            {% endfor %}
 

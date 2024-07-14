@@ -5,7 +5,7 @@ from django.views.generic import (
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
-from .models import Post
+from .models import Post, Category
 from .filters import NewsFilter
 from .forms import PostForm
 from django.shortcuts import redirect
@@ -58,6 +58,7 @@ class NewsCreate(PermissionRequiredMixin, CreateView):
     def form_valid(self, form):
         news = form.save(commit=False)
         news.type = Post.news
+        news.author = self.request.user
         return super().form_valid(form)
 
 
@@ -70,6 +71,7 @@ class PostCreate(PermissionRequiredMixin, CreateView):
     def form_valid(self, form):
         news = form.save(commit=False)
         news.type = Post.post
+        news.author = self.request.user
         return super().form_valid(form)
 
 
@@ -94,3 +96,6 @@ def become_author(request):
     if not request.user.groups.filter(name='authors').exists():
         author_group.user_set.add(user)
     return redirect('/')
+
+
+
