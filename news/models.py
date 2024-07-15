@@ -13,8 +13,6 @@ class Category(models.Model):
         return self.name
 
 
-# Класс авторов перестал использоваться и вместо него теперь идет User и группа авторов
-# модель осталась в коде в основном для учебных целей
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     rating = models.IntegerField(default=0)
@@ -40,7 +38,7 @@ class Post(models.Model):
         (news, 'новость')
     ]
 
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     type = models.CharField(max_length=2, choices=TYPE)
     creation_time = models.DateTimeField(auto_now_add=True)
     category = models.ManyToManyField(Category, through='PostCategory')

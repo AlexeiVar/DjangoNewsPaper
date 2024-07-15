@@ -1,6 +1,9 @@
-from django.urls import path
+from django.urls import path, include
 # Импортируем созданное нами представление
-from .views import NewsList, NewsDetail, NewsSearch, NewsCreate, PostCreate, PostUpdate, PostDelete, become_author
+from .views import (
+    NewsList, NewsDetail, NewsSearch, NewsCreate, PostCreate, PostUpdate, PostDelete, become_author,
+    subscribe, unsubscribe
+)
 
 urlpatterns = [
     path('', NewsList.as_view(), name='news_list'),
@@ -12,5 +15,7 @@ urlpatterns = [
     path('post/<int:pk>/edit/', PostUpdate.as_view(), name='post_edit'),
     path('news/<int:pk>/delete/', PostDelete.as_view(), name='news_delete'),
     path('post/<int:pk>/delete/', PostDelete.as_view(), name='post_delete'),
-    path('become_author/', become_author, name='become_author')
+    path('become_author/', become_author, name='become_author'),
+    path('category/<int:pk>/subscribe', subscribe, name='subscribe'),
+    path('category/<int:pk>/unsubscribe', unsubscribe, name='unsubscribe'),
 ]

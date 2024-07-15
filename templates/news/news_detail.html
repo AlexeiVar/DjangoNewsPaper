@@ -12,4 +12,14 @@ NewsDetail
     {{ news_detail.text | censor }}
 </p>
 <h3 style="text-align:right">Рейтинг новости: {{ news_detail.rating }}</h3>
+
+{% if user.is_authenticated %}
+{% for category in news_detail.category.all %}
+{% if user not in category.subscribers.all %}
+<button> <a href="{% url 'subscribe' category.id %}"> Подписаться на категорию: {{ category }}</a></button>
+{% else %}
+<button> <a href="{% url 'unsubscribe' category.id %}"> Отписаться от категории: {{ category }}</a></button>
+{% endif %}
+{% endfor %}
+{% endif %}
 {% endblock content %}
