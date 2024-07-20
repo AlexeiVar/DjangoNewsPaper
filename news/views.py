@@ -10,6 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from .models import Post, Category, Author
 from .filters import NewsFilter
 from .forms import PostForm
+from .tasks import send_notifications
 from django.shortcuts import redirect
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required
@@ -67,6 +68,8 @@ class NewsCreate(PermissionRequiredMixin, CreateView):
         if count >= 3:
             return render(self.request, 'news/news_limit_reached.html')
         news.type = Post.news
+        news.save()
+        send_notifications.delay(news.pk)
         return super().form_valid(form)
 
 
@@ -86,6 +89,8 @@ class PostCreate(PermissionRequiredMixin, CreateView):
         if count >= 3:
             return render(self.request, 'news/news_limit_reached.html')
         news.type = Post.post
+        news.save()
+        send_notifications.delay(news.pk)
         return super().form_valid(form)
 
 

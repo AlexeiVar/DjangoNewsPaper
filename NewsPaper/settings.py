@@ -154,9 +154,26 @@ STATICFILES_DIRS = [
 ]
 
 load_dotenv()
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 465
+# Это если используется яндекс
+# EMAIL_HOST = 'smtp.yandex.ru'
+# EMAIL_PORT = 465
+# EMAIL_HOST_USER = os.getenv('EMAIL')
+# EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
+# EMAIL_USE_TLS = False
+# EMAIL_USE_SSL = True
+# DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+
+# Это если используется mail.ru
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 2525
 EMAIL_HOST_USER = os.getenv('EMAIL')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
-EMAIL_USE_SSL = True
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
