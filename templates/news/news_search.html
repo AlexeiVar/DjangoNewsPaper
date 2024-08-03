@@ -6,7 +6,10 @@ NewsSearch
 
 {% block content %}
    <h1>Все новости</h1>
-   <h3>Всего новостей: {{ news_list|length }}</h3>
+    {% load cache %}
+        {% cache 60 header %}
+            <h3>Всего новостей: {{ page_obj.paginator.count }}</h3>
+        {% endcache %}
 
    <form action="" method="get">
        {{ filterset.form.as_p }}
@@ -21,7 +24,6 @@ NewsSearch
                <td>Дата публикации</td>
                <td>Текст</td>
            </tr>
-
            {% for news in news_list %}
            <tr>
                <td><a href="{% url 'news_detail' news.id %}">{{ news.title | censor }}</a></td>
@@ -37,6 +39,7 @@ NewsSearch
                {% endif %}
            </tr>
            {% endfor %}
+
 
        </table>
    {% else %}

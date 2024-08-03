@@ -6,7 +6,10 @@ NewsList
 
 {% block content %}
    <h1>Все новости</h1>
-   <h3>Всего новостей: {{ page_obj.paginator.count }}</h3>
+    {% load cache %}
+        {% cache 60 header %}
+            <h3>Всего новостей: {{ page_obj.paginator.count }}</h3>
+        {% endcache %}
    <hr>
    {% if news_list %}
        <table>
@@ -15,7 +18,6 @@ NewsList
                <td>Дата публикации</td>
                <td>Текст</td>
            </tr>
-
            {% for news in news_list %}
            <tr>
                <td><a href="{% url 'news_detail' news.id %}">{{ news.title | censor }}</a></td>
@@ -31,7 +33,6 @@ NewsList
                {% endif %}
            </tr>
            {% endfor %}
-
        </table>
    {% else %}
        <h2>Новостей нет!</h2>

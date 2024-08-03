@@ -1,4 +1,4 @@
-from datetime import timezone, timedelta, datetime
+from datetime import timedelta, datetime
 
 from django.shortcuts import render
 from django.views.generic import (
@@ -6,6 +6,7 @@ from django.views.generic import (
 )
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.views.decorators.cache import cache_page
 
 from .models import Post, Category, Author
 from .filters import NewsFilter
@@ -125,6 +126,7 @@ def subscribe(request, pk):
     category.subscribers.add(user)
     return_path = request.META.get('HTTP_REFERER', '/')
     return redirect(return_path)
+
 
 @login_required
 def unsubscribe(request, pk):

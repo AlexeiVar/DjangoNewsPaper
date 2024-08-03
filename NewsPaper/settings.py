@@ -153,6 +153,13 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'cache_files'),
+    }
+}
+
 load_dotenv()
 # Это если используется яндекс
 # EMAIL_HOST = 'smtp.yandex.ru'
