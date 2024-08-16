@@ -101,3 +101,6 @@ class Comment(models.Model):
     def dislike(self):
         self.rating -= 1
         self.save()
+
+    def post_title(self):
+        return self.post.title

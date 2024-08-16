@@ -1,9 +1,34 @@
 from django.contrib import admin
 from .models import *
 
-admin.site.register(Post)
-admin.site.register(PostCategory)
-admin.site.register(Author)
-admin.site.register(Comment)
-admin.site.register(Category)
-# Register your models here.
+
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'type', 'author')
+    list_filter = ('author', 'type')
+    search_fields = ('title', 'type')
+
+
+class PostCategoryAdmin(admin.ModelAdmin):
+    list_display = ('category', 'post')
+    list_filter = ('category', 'post')
+
+
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('user', 'rating')
+
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'post_title', 'rating')
+    list_filter = ('user',)
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_fields = ('name',)
+
+
+admin.site.register(Post, PostAdmin)
+admin.site.register(PostCategory, PostCategoryAdmin)
+admin.site.register(Author, AuthorAdmin)
+admin.site.register(Comment, CommentAdmin)
+admin.site.register(Category, CategoryAdmin)
