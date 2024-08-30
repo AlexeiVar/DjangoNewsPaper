@@ -7,7 +7,7 @@ from django.core.cache import cache
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+    name = models.TextField (max_length=255, unique=True)
     subscribers = models.ManyToManyField(User, blank=True, related_name='categories')
 
     def __str__(self):
@@ -40,10 +40,10 @@ class Post(models.Model):
     ]
 
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    type = models.CharField(max_length=2, choices=TYPE)
+    type = models.TextField(max_length=2, choices=TYPE)
     creation_time = models.DateTimeField(auto_now_add=True)
     category = models.ManyToManyField(Category, through='PostCategory')
-    title = models.CharField(max_length=255)
+    title = models.TextField(max_length=255)
     text = models.TextField()
     rating = models.IntegerField(default=0)
 
