@@ -1,11 +1,11 @@
 {% extends 'default.html' %}
-
+{% load i18n %}
 {% block content %}
-<h1>Удаление новости</h1>
+<h1>{% trans 'News deletion' %}</h1>
 <hr>
 <form action="" method="post">
     {% csrf_token %}
-    <p>Удаляем "{{ object.title }}"?</p>
+    <p>{% trans 'Delete' %} "{{ object.title }}"?</p>
     <input type="submit" value="Delete" />
 </form>
 {% endblock content %}

@@ -3,9 +3,9 @@
 {% block title %}
 NewsLimit
 {% endblock title %}
-
+{% load i18n %}
 
 {% block content %}
-<h1>Вы достигли лимита 3 записей в день, пожалуйста попробуйте опубликовать свою запись завтра.</h1>
+<h1>{% trans 'You reached the limit of 3 posts per day, please try to post tomorrow.' %}</h1>
 
 {% endblock content %}

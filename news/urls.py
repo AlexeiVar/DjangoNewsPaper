@@ -19,4 +19,5 @@ urlpatterns = [
     path('become_author/', become_author, name='become_author'),
     path('category/<int:pk>/subscribe', subscribe, name='subscribe'),
     path('category/<int:pk>/unsubscribe', unsubscribe, name='unsubscribe'),
+    path('i18n/', include('django.conf.urls.i18n')),
 ]

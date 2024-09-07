@@ -1,5 +1,6 @@
 from datetime import timedelta, datetime
 
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import (
     ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -7,7 +8,7 @@ from django.views.generic import (
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.views.decorators.cache import cache_page
-
+from django.utils import timezone
 from .models import Post, Category, Author
 from .filters import NewsFilter
 from .forms import PostForm
@@ -15,6 +16,7 @@ from .tasks import send_notifications
 from django.shortcuts import redirect
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required
+import pytz
 
 
 class NewsList(ListView):
@@ -28,6 +30,10 @@ class NewsList(ListView):
         context = super().get_context_data(**kwargs)
         context['is_not_author'] = not self.request.user.groups.filter(name='authors').exists()
         return context
+
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return HttpResponseRedirect(request.path_info)
 
 
 class NewsSearch(ListView):
@@ -46,11 +52,19 @@ class NewsSearch(ListView):
         context['filterset'] = self.filterset
         return context
 
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return HttpResponseRedirect(request.path_info)
+
 
 class NewsDetail(DetailView):
     model = Post
     template_name = 'news/news_detail.html'
     context_object_name = 'news_detail'
+
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return HttpResponseRedirect(request.path_info)
 
 
 class NewsCreate(PermissionRequiredMixin, CreateView):
@@ -73,6 +87,10 @@ class NewsCreate(PermissionRequiredMixin, CreateView):
         send_notifications.delay(news.pk)
         return super().form_valid(form)
 
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return HttpResponseRedirect(request.path_info)
+
 
 class PostCreate(PermissionRequiredMixin, CreateView):
     permission_required = ('news.add_post',)
@@ -94,6 +112,10 @@ class PostCreate(PermissionRequiredMixin, CreateView):
         send_notifications.delay(news.pk)
         return super().form_valid(form)
 
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return HttpResponseRedirect(request.path_info)
+
 
 class PostUpdate(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
     permission_required = ('news.change_post',)
@@ -101,12 +123,20 @@ class PostUpdate(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
     model = Post
     template_name = 'news/news_create.html'
 
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return HttpResponseRedirect(request.path_info)
+
 
 class PostDelete(PermissionRequiredMixin, DeleteView):
     permission_required = ('news.delete_post',)
     model = Post
     template_name = 'news/news_delete.html'
     success_url = reverse_lazy('news_list')
+
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return HttpResponseRedirect(request.path_info)
 
 
 @login_required

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load i18n %}
+{% load tz %}
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -10,22 +12,48 @@
         {% load static %}
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
+    <style>
+        body {background-color: {% if current_time.hour >= 19 or current_time.hour <= 7 %} darkcyan {% endif %};}
+    </style>
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            {% load cache %}
-            {% cache 600 navigation %}
             <div class="container">
-                <a class="navbar-brand" href="/">Newspaper</a>
-                <a class="navbar-brand" href="{% url 'news_search' %}">Поиск</a>
-            {% endcache %}
-            {% cache 10 login %}
+                <a class="navbar-brand" href="/">{% trans 'Newspaper' %}</a>
+                <a class="navbar-brand" href="{% url 'news_search' %}">{% trans 'Search' %}</a>
+                <form action="{% url 'set_language' %}" method="POST"> {% csrf_token %} <!-- Не забываем по csrf_token для POST запросов -->
+                <input type="hidden" name="next" value="{{ redirect_to }}">
+
+                <select name="language" id="">
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                            {{ language.name_local }} - {{ language.code }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="set">
+                </form>
+
+                {% get_current_timezone as TIME_ZONE %}
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <label for="timezone">Time zone:</label>
+                    <select name="timezone">
+                        {% for tz in timezones %}
+                        <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Set">
+                </form>
+
                 {% if user.is_authenticated %}
-                <a class="navbar-brand" href="/accounts/logout/">Выйти</a>
+                <a class="navbar-brand" href="/accounts/logout/">{% trans 'Sign out' %}</a>
                 {% else %}
-                <a class="navbar-brand" href="/accounts/">Войти</a>
+                <a class="navbar-brand" href="/accounts/">{% trans 'Sign in' %}</a>
                 {% endif %}
-            {% endcache %}
             </div>
         </nav>
         <!-- Page content-->

@@ -1,0 +1,1743 @@
+07.09.2024 17-27-17 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.ProgrammingError'>, ProgrammingError('ОШИБКА:  отношение "news_post" не существует\nLINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"\n                                          ^\n'), <traceback object at 0x059D9968>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\newspaper\news\views.py", line 28, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 72, in page
+    number = self.validate_number(number)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 99, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 93, in count
+    return c()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+07.09.2024 17-27-18 ERROR "GET / HTTP/1.1" 500 177159 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-27-19 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.ProgrammingError'>, ProgrammingError('ОШИБКА:  отношение "news_post" не существует\nLINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"\n                                          ^\n'), <traceback object at 0x05924208>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\newspaper\news\views.py", line 28, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 72, in page
+    number = self.validate_number(number)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 99, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 93, in count
+    return c()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+07.09.2024 17-27-19 ERROR "GET / HTTP/1.1" 500 177296 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-27-20 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.ProgrammingError'>, ProgrammingError('ОШИБКА:  отношение "news_post" не существует\nLINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"\n                                          ^\n'), <traceback object at 0x059F0808>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\newspaper\news\views.py", line 28, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 72, in page
+    number = self.validate_number(number)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 99, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 93, in count
+    return c()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+07.09.2024 17-27-20 ERROR "GET / HTTP/1.1" 500 177296 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-28-39 ERROR Internal Server Error: /admin/news/postcategory/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.ProgrammingError'>, ProgrammingError('ОШИБКА:  отношение "news_category" не существует\nLINE 1: ..."news_category"."id", "news_category"."name" FROM "news_cate...\n                                                             ^\n'), <traceback object at 0x05EB51E8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "news_category" не существует
+LINE 1: ..."news_category"."id", "news_category"."name" FROM "news_cate...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 503, in get_queryset
+    ) = self.get_filters(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 182, in get_filters
+    spec = field_list_filter_class(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 175, in create
+    return list_filter_class(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 188, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 225, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\fields\__init__.py", line 1009, in get_choices
+    return (blank_choice if include_blank else []) + [
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: ОШИБКА:  отношение "news_category" не существует
+LINE 1: ..."news_category"."id", "news_category"."name" FROM "news_cate...
+                                                             ^
+
+07.09.2024 17-28-39 ERROR "GET /admin/news/postcategory/ HTTP/1.1" 500 194585 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-28-45 ERROR Internal Server Error: /admin/news/post/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.ProgrammingError'>, ProgrammingError('ОШИБКА:  отношение "news_author" не существует\nLINE 1: ...ws_author"."user_id", "news_author"."rating" FROM "news_auth...\n                                                             ^\n'), <traceback object at 0x061739A8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "news_author" не существует
+LINE 1: ...ws_author"."user_id", "news_author"."rating" FROM "news_auth...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 503, in get_queryset
+    ) = self.get_filters(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 182, in get_filters
+    spec = field_list_filter_class(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 175, in create
+    return list_filter_class(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 188, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 225, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\fields\__init__.py", line 1009, in get_choices
+    return (blank_choice if include_blank else []) + [
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: ОШИБКА:  отношение "news_author" не существует
+LINE 1: ...ws_author"."user_id", "news_author"."rating" FROM "news_auth...
+                                                             ^
+
+07.09.2024 17-28-45 ERROR "GET /admin/news/post/ HTTP/1.1" 500 194505 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-30-48 ERROR Internal Server Error: /admin/news/post/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.ProgrammingError'>, ProgrammingError('ОШИБКА:  отношение "news_post" не существует\nLINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"\n                                          ^\n'), <traceback object at 0x05913428>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 123, in __init__
+    self.get_results(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 279, in get_results
+    result_count = paginator.count
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 93, in count
+    return c()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+07.09.2024 17-30-48 ERROR "GET /admin/news/post/ HTTP/1.1" 500 177881 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-30-49 ERROR Internal Server Error: /admin/news/post/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.ProgrammingError'>, ProgrammingError('ОШИБКА:  отношение "news_post" не существует\nLINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"\n                                          ^\n'), <traceback object at 0x05C26648>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 123, in __init__
+    self.get_results(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 279, in get_results
+    result_count = paginator.count
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 93, in count
+    return c()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+07.09.2024 17-30-49 ERROR "GET /admin/news/post/ HTTP/1.1" 500 177881 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-30-50 ERROR Internal Server Error: /admin/news/post/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.ProgrammingError'>, ProgrammingError('ОШИБКА:  отношение "news_post" не существует\nLINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"\n                                          ^\n'), <traceback object at 0x05C264E8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 123, in __init__
+    self.get_results(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 279, in get_results
+    result_count = paginator.count
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 93, in count
+    return c()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: ОШИБКА:  отношение "news_post" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_post"
+                                          ^
+
+07.09.2024 17-30-50 ERROR "GET /admin/news/post/ HTTP/1.1" 500 177881 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-31-12 ERROR Internal Server Error: /admin/news/post/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.ProgrammingError'>, ProgrammingError('ОШИБКА:  отношение "news_author" не существует\nLINE 1: ...ws_author"."user_id", "news_author"."rating" FROM "news_auth...\n                                                             ^\n'), <traceback object at 0x056963A8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "news_author" не существует
+LINE 1: ...ws_author"."user_id", "news_author"."rating" FROM "news_auth...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 503, in get_queryset
+    ) = self.get_filters(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 182, in get_filters
+    spec = field_list_filter_class(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 175, in create
+    return list_filter_class(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 188, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 225, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\fields\__init__.py", line 1009, in get_choices
+    return (blank_choice if include_blank else []) + [
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: ОШИБКА:  отношение "news_author" не существует
+LINE 1: ...ws_author"."user_id", "news_author"."rating" FROM "news_auth...
+                                                             ^
+
+07.09.2024 17-31-12 ERROR "GET /admin/news/post/ HTTP/1.1" 500 194514 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-31-32 ERROR Internal Server Error: /admin/news/author/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.ProgrammingError'>, ProgrammingError('ОШИБКА:  отношение "news_author" не существует\nLINE 1: SELECT COUNT(*) AS "__count" FROM "news_author"\n                                          ^\n'), <traceback object at 0x05EB66A8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "news_author" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_author"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 123, in __init__
+    self.get_results(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 279, in get_results
+    result_count = paginator.count
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\paginator.py", line 93, in count
+    return c()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: ОШИБКА:  отношение "news_author" не существует
+LINE 1: SELECT COUNT(*) AS "__count" FROM "news_author"
+                                          ^
+
+07.09.2024 17-31-32 ERROR "GET /admin/news/author/ HTTP/1.1" 500 178014 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-31-37 ERROR Internal Server Error: /admin/news/post/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.ProgrammingError'>, ProgrammingError('ОШИБКА:  отношение "news_author" не существует\nLINE 1: ...ws_author"."user_id", "news_author"."rating" FROM "news_auth...\n                                                             ^\n'), <traceback object at 0x05EDACA8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "news_author" не существует
+LINE 1: ...ws_author"."user_id", "news_author"."rating" FROM "news_auth...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 503, in get_queryset
+    ) = self.get_filters(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 182, in get_filters
+    spec = field_list_filter_class(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 175, in create
+    return list_filter_class(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 188, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\admin\filters.py", line 225, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\fields\__init__.py", line 1009, in get_choices
+    return (blank_choice if include_blank else []) + [
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: ОШИБКА:  отношение "news_author" не существует
+LINE 1: ...ws_author"."user_id", "news_author"."rating" FROM "news_auth...
+                                                             ^
+
+07.09.2024 17-31-37 ERROR "GET /admin/news/post/ HTTP/1.1" 500 194473 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-37-22 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('Unknown argument for \'trans\' tag: \'out\'. The only options available are \'noop\', \'context\' "xxx", and \'as VAR\'.'), <traceback object at 0x043A4388>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\templatetags\cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\templatetags\i18n.py", line 443, in do_translate
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'trans' tag: 'out'. The only options available are 'noop', 'context' "xxx", and 'as VAR'.
+07.09.2024 17-37-22 ERROR "GET / HTTP/1.1" 500 206697 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-37-25 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('Unknown argument for \'trans\' tag: \'out\'. The only options available are \'noop\', \'context\' "xxx", and \'as VAR\'.'), <traceback object at 0x05A1AB28>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\templatetags\cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\templatetags\i18n.py", line 443, in do_translate
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'trans' tag: 'out'. The only options available are 'noop', 'context' "xxx", and 'as VAR'.
+07.09.2024 17-37-25 ERROR "GET / HTTP/1.1" 500 206834 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-37-55 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Could not parse the remainder: '(Sign' from '(Sign'"), <traceback object at 0x0533EFC8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\templatetags\cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\templatetags\i18n.py", line 403, in do_translate
+    message_string = parser.compile_filter(bits[1])
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(Sign' from '(Sign'
+07.09.2024 17-37-55 ERROR "GET / HTTP/1.1" 500 214522 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-37-56 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Could not parse the remainder: '(Sign' from '(Sign'"), <traceback object at 0x059554E8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\templatetags\cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\templatetags\i18n.py", line 403, in do_translate
+    message_string = parser.compile_filter(bits[1])
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(Sign' from '(Sign'
+07.09.2024 17-37-56 ERROR "GET / HTTP/1.1" 500 214522 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 17-55-48 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('Unknown argument for \'trans\' tag: \'нет!\'. The only options available are \'noop\', \'context\' "xxx", and \'as VAR\'.'), <traceback object at 0x05AC31A8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 967, in do_if
+    nodelist = parser.parse(("endif",))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\templatetags\i18n.py", line 443, in do_translate
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'trans' tag: 'нет!'. The only options available are 'noop', 'context' "xxx", and 'as VAR'.
+07.09.2024 17-55-48 ERROR "GET / HTTP/1.1" 500 228577 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 18-11-04 ERROR Internal Server Error: /become_author/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.contrib.auth.models.Group.DoesNotExist'>, DoesNotExist('Group matching query does not exist.'), <traceback object at 0x0646DA88>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\newspaper\news\views.py", line 115, in become_author
+    author_group = Group.objects.get(name='authors')
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Group.DoesNotExist: Group matching query does not exist.
+07.09.2024 18-11-04 ERROR "GET /become_author/ HTTP/1.1" 500 88333 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 20-36-19 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x05E603A8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+07.09.2024 20-36-19 ERROR "GET / HTTP/1.1" 500 146780 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 20-36-20 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x05898408>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+07.09.2024 20-36-20 ERROR "GET / HTTP/1.1" 500 146917 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 20-36-21 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x0587A2A8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+07.09.2024 20-36-21 ERROR "GET / HTTP/1.1" 500 146917 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-40-15 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x05E02448>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+07.09.2024 23-40-15 ERROR "GET / HTTP/1.1" 500 154587 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-40-15 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x05E0AD88>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+07.09.2024 23-40-15 ERROR "GET / HTTP/1.1" 500 154313 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-40-17 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x059FF428>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+07.09.2024 23-40-17 ERROR "GET / HTTP/1.1" 500 154450 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-40-17 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x05A15CE8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+07.09.2024 23-40-17 ERROR "GET / HTTP/1.1" 500 154450 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-42-03 ERROR Internal Server Error: /news_list/set_timezone/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.utils.datastructures.MultiValueDictKeyError'>, MultiValueDictKeyError('timezone'), <traceback object at 0x05AD26E8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'timezone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\newspaper\news\views.py", line 143, in set_timezone
+    request.session['django_timezone'] = request.POST['timezone']
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'timezone'
+07.09.2024 23-42-03 ERROR "POST /news_list/set_timezone/ HTTP/1.1" 500 79872 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-42-33 ERROR Internal Server Error: /news_list/set_timezone/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.utils.datastructures.MultiValueDictKeyError'>, MultiValueDictKeyError('timezone'), <traceback object at 0x062EB388>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'timezone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\newspaper\news\views.py", line 143, in set_timezone
+    request.session['django_timezone'] = request.POST['timezone']
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'timezone'
+07.09.2024 23-42-33 ERROR "POST /news_list/set_timezone/ HTTP/1.1" 500 80026 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-42-35 ERROR Internal Server Error: /news_list/set_timezone/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.utils.datastructures.MultiValueDictKeyError'>, MultiValueDictKeyError('timezone'), <traceback object at 0x061ECCE8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'timezone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\newspaper\news\views.py", line 143, in set_timezone
+    request.session['django_timezone'] = request.POST['timezone']
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'timezone'
+07.09.2024 23-42-35 ERROR "POST /news_list/set_timezone/ HTTP/1.1" 500 80026 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-42-38 ERROR Internal Server Error: /news_list/set_timezone/ C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.utils.datastructures.MultiValueDictKeyError'>, MultiValueDictKeyError('timezone'), <traceback object at 0x0622CE88>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'timezone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\newspaper\news\views.py", line 143, in set_timezone
+    request.session['django_timezone'] = request.POST['timezone']
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'timezone'
+07.09.2024 23-42-38 ERROR "POST /news_list/set_timezone/ HTTP/1.1" 500 80026 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-45-09 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x0665C408>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+07.09.2024 23-45-09 ERROR "GET / HTTP/1.1" 500 155035 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-45-10 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x0666D7C8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+07.09.2024 23-45-10 ERROR "GET / HTTP/1.1" 500 155035 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-45-10 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x06715328>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+07.09.2024 23-45-11 ERROR "GET / HTTP/1.1" 500 155035 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+07.09.2024 23-45-11 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x0611AE48>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+07.09.2024 23-45-11 ERROR "GET / HTTP/1.1" 500 155035 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+08.09.2024 00-05-11 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'ImportError'>, ImportError('Module "news.context_processors" does not define a "categories" attribute/class'), <traceback object at 0x05646128>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 16, in cached_import
+    return getattr(module, class_name)
+AttributeError: module 'news.context_processors' has no attribute 'categories'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 173, in render
+    with context.bind_template(self):
+  File "C:\Users\Alex\AppData\Local\Programs\Python\Python38-32\lib\contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 116, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 116, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 32, in import_string
+    raise ImportError(
+ImportError: Module "news.context_processors" does not define a "categories" attribute/class
+08.09.2024 00-05-11 ERROR "GET / HTTP/1.1" 500 120150 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+08.09.2024 00-05-11 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'ImportError'>, ImportError('Module "news.context_processors" does not define a "categories" attribute/class'), <traceback object at 0x057D9368>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 16, in cached_import
+    return getattr(module, class_name)
+AttributeError: module 'news.context_processors' has no attribute 'categories'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 173, in render
+    with context.bind_template(self):
+  File "C:\Users\Alex\AppData\Local\Programs\Python\Python38-32\lib\contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 116, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 116, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 32, in import_string
+    raise ImportError(
+ImportError: Module "news.context_processors" does not define a "categories" attribute/class
+08.09.2024 00-05-11 ERROR "GET / HTTP/1.1" 500 120274 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+08.09.2024 00-05-13 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'ImportError'>, ImportError('Module "news.context_processors" does not define a "categories" attribute/class'), <traceback object at 0x053FA8E8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 16, in cached_import
+    return getattr(module, class_name)
+AttributeError: module 'news.context_processors' has no attribute 'categories'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 173, in render
+    with context.bind_template(self):
+  File "C:\Users\Alex\AppData\Local\Programs\Python\Python38-32\lib\contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 116, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 116, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 32, in import_string
+    raise ImportError(
+ImportError: Module "news.context_processors" does not define a "categories" attribute/class
+08.09.2024 00-05-13 ERROR "GET / HTTP/1.1" 500 120407 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+08.09.2024 00-05-13 ERROR Internal Server Error: / C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'ImportError'>, ImportError('Module "news.context_processors" does not define a "categories" attribute/class'), <traceback object at 0x052BCA48>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 16, in cached_import
+    return getattr(module, class_name)
+AttributeError: module 'news.context_processors' has no attribute 'categories'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\base.py", line 173, in render
+    with context.bind_template(self):
+  File "C:\Users\Alex\AppData\Local\Programs\Python\Python38-32\lib\contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 116, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\template\engine.py", line 116, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\module_loading.py", line 32, in import_string
+    raise ImportError(
+ImportError: Module "news.context_processors" does not define a "categories" attribute/class
+08.09.2024 00-05-13 ERROR "GET / HTTP/1.1" 500 120411 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None
+08.09.2024 00-09-22 ERROR Internal Server Error: /news_list/search C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for '' not found. '' is not a valid view function or pattern name."), <traceback object at 0x058100E8>)
+Traceback (most recent call last):
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\newspaper\news\views.py", line 56, in post
+    return redirect('')
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+08.09.2024 00-09-22 ERROR "POST /news_list/search HTTP/1.1" 500 103646 C:\Users\Alex\PycharmProjects\SkillFactoryDjango\.venv\lib\site-packages\django\core\servers\basehttp.py None

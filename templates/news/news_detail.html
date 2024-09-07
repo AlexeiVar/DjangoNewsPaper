@@ -3,22 +3,22 @@
 {% block title %}
 NewsDetail
 {% endblock title %}
-
+{% load i18n %}
 
 {% block content %}
 <h1>{{ news_detail.title | censor }}</h1>
-<h2>Написано: {{ news_detail.author }}. Дата публикации: {{ news_detail.creation_time | date:'d M Y' }}</h2>
+<h2>{% trans 'Written by' %}: {{ news_detail.author }}. {% trans 'Date of publication' %}: {{ news_detail.creation_time | date:'d M Y' }}</h2>
 <p style="font-size:1.75em">
     {{ news_detail.text | censor }}
 </p>
-<h3 style="text-align:right">Рейтинг новости: {{ news_detail.rating }}</h3>
+<h3 style="text-align:right">{% trans 'News rating' %}: {{ news_detail.rating }}</h3>
 
 {% if user.is_authenticated %}
 {% for category in news_detail.category.all %}
 {% if user not in category.subscribers.all %}
-<button> <a href="{% url 'subscribe' category.id %}"> Подписаться на категорию: {{ category }}</a></button>
+<button> <a href="{% url 'subscribe' category.id %}"> {% trans 'Subscribe to category' %}: {{ category }}</a></button>
 {% else %}
-<button> <a href="{% url 'unsubscribe' category.id %}"> Отписаться от категории: {{ category }}</a></button>
+<button> <a href="{% url 'unsubscribe' category.id %}"> {% trans 'Unsubscribe from category' %}: {{ category }}</a></button>
 {% endif %}
 {% endfor %}
 {% endif %}

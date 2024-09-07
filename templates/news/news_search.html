@@ -3,12 +3,12 @@
 {% block title %}
 NewsSearch
 {% endblock title %}
-
 {% block content %}
-   <h1>Все новости</h1>
+{% load i18n %}
+   <h1>{%  trans 'All news' %}</h1>
     {% load cache %}
         {% cache 60 header %}
-            <h3>Всего новостей: {{ page_obj.paginator.count }}</h3>
+            <h3>{% trans 'Total news' %}: {{ page_obj.paginator.count }}</h3>
         {% endcache %}
 
    <form action="" method="get">
@@ -20,9 +20,9 @@ NewsSearch
    {% if news_list %}
        <table>
            <tr>
-               <td>Заголовок</td>
-               <td>Дата публикации</td>
-               <td>Текст</td>
+               <td>{% trans 'Title' %}</td>
+               <td>{% trans 'Date of publication' %}</td>
+               <td>{% trans 'Text' %}</td>
            </tr>
            {% for news in news_list %}
            <tr>
@@ -30,12 +30,14 @@ NewsSearch
                <td>{{ news.creation_time | date:'d M Y' }}</td>
                <td>{{ news.text | truncatechars:20 | censor }}</td>
                <!--Поскольку сделано, что у поста и новости разные страницы, так будет правильнее-->
+               {% trans 'Delete' as delete_trans %}
+               {% trans 'Redact' as redact_trans %}
                {% if news.type == "NE" %}
-               <td><a href="{% url 'news_delete' news.id %}">Удалить</a></td>
-               <td><a href="{% url 'news_edit' news.id %}">Редактировать</a></td>
+               <td><a href="{% url 'news_delete' news.id %}">{{ delete_trans }}</a></td>
+               <td><a href="{% url 'news_edit' news.id %}">{{ redact_trans }}</a></td>
                {% else %}
-               <td><a href="{% url 'post_delete' news.id %}">Удалить</a></td>
-               <td><a href="{% url 'post_edit' news.id %}">Редактировать</a></td>
+               <td><a href="{% url 'post_delete' news.id %}">{{ delete_trans }}</a></td>
+               <td><a href="{% url 'post_edit' news.id %}">{{ redact_trans }}</a></td>
                {% endif %}
            </tr>
            {% endfor %}
@@ -43,7 +45,7 @@ NewsSearch
 
        </table>
    {% else %}
-       <h2>Новостей нет!</h2>
+       <h2>{% trans "There are no news" %}!</h2>
    {% endif %}
 
 {% endblock content %}

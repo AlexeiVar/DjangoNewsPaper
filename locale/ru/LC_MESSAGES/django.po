@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-07 18:14+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\templates\allauth\layouts\base.html:20
+msgid "Messages:"
+msgstr "Сообщения:"
+
+#: .\templates\allauth\layouts\base.html:27
+msgid "Menu:"
+msgstr "Меню:"
+
+#: .\templates\allauth\layouts\base.html:33
+msgid "Change Email"
+msgstr "Поменять емейл"
+
+#: .\templates\allauth\layouts\base.html:39
+msgid "Change Password"
+msgstr "Поменять пароль"
+
+#: .\templates\allauth\layouts\base.html:45
+msgid "Two-Factor Authentication"
+msgstr "Двухфакторная аутентификация"
+
+#: .\templates\allauth\layouts\base.html:51
+msgid "Sessions"
+msgstr "Сессии"
+
+#: .\templates\allauth\layouts\base.html:57
+msgid "Sign Out"
+msgstr "Выйти"
+
+#: .\templates\allauth\layouts\base.html:64
+msgid "Sign In"
+msgstr "Войти"
+
+#: .\templates\allauth\layouts\base.html:70
+msgid "Sign Up"
+msgstr "Зарегистрироваться"
+
+#: .\templates\default.html:18
+msgid "Newspaper"
+msgstr "Новости"
+
+#: .\templates\default.html:19
+msgid "Search"
+msgstr "Поиск"
+
+#: .\templates\default.html:21
+msgid "Sign out"
+msgstr "Выйти"
+
+#: .\templates\default.html:23
+msgid "Sign in"
+msgstr "Войти"
+
+#: .\templates\news\news_create.html:4
+msgid "News"
+msgstr "Новости"
+
+#: .\templates\news\news_delete.html:4
+msgid "News deletion"
+msgstr "Удаление новости"
+
+#: .\templates\news\news_delete.html:8 .\templates\news\news_list.html:27
+#: .\templates\news\news_search.html:33
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\templates\news\news_detail.html:10
+msgid "Written by"
+msgstr "Написано"
+
+#: .\templates\news\news_detail.html:10 .\templates\news\news_list.html:18
+#: .\templates\news\news_search.html:24
+msgid "Date of publication"
+msgstr "Дата публикации"
+
+#: .\templates\news\news_detail.html:14
+msgid "News rating"
+msgstr "Рейтинг новости"
+
+#: .\templates\news\news_detail.html:19
+msgid "Subscribe to category"
+msgstr "Подписаться на категорию"
+
+#: .\templates\news\news_detail.html:21
+msgid "Unsubscribe from category"
+msgstr "Отписаться от категории"
+
+#: .\templates\news\news_limit_reached.html:9
+msgid "You reached the limit of 3 posts per day, please try to post tomorrow."
+msgstr ""
+"Вы достигли лимита в 3 поста за день, пожалуйста попробуйте выложить пост "
+"завтра."
+
+#: .\templates\news\news_list.html:8 .\templates\news\news_search.html:8
+msgid "All news"
+msgstr "Все новости"
+
+#: .\templates\news\news_list.html:11 .\templates\news\news_search.html:11
+msgid "Total news"
+msgstr "Всего новостей"
+
+#: .\templates\news\news_list.html:17 .\templates\news\news_search.html:23
+msgid "Title"
+msgstr "Название"
+
+#: .\templates\news\news_list.html:19 .\templates\news\news_search.html:25
+msgid "Text"
+msgstr "Текст"
+
+#: .\templates\news\news_list.html:28 .\templates\news\news_search.html:34
+msgid "Redact"
+msgstr "Редактировать"
+
+#: .\templates\news\news_list.html:40 .\templates\news\news_search.html:48
+msgid "There are no news"
+msgstr "Новостей нет"
+
+#: .\templates\news\news_list.html:62
+msgid "Become an author"
+msgstr "Стать автором"
+
+#: .\templates\news\news_list.html:64
+msgid "Create a new news"
+msgstr "Создать новую новость"
+
+#: .\templates\news\news_list.html:65
+msgid "Create a news post"
+msgstr "Создать новую пост"
